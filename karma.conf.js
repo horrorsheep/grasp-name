@@ -27,6 +27,13 @@ module.exports = function (config) {
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    restartOnFileChange: true
+    restartOnFileChange: true,
+    browsers: ['Chrome_without_sandbox'],
+    customLaunchers: {
+      Chrome_without_sandbox: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox'] // with sandbox it fails under Docker
+      }
+    },
   });
 };
