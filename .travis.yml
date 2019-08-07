@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run grasp-name-dev npm run test -- --watch=false
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-1"
+  app: "grasp-name"
+  env: "GraspName-env"
+  bucket_name: "elasticbeanstalk-us-west-1-779818728252"
+  bucket_path: "grasp-name"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_key_id:
+    secure: "$AWS_SECRET_KEY"
