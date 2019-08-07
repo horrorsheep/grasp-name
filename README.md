@@ -1,4 +1,4 @@
-# GraspName
+# GraspName [![Build Status](https://travis-ci.org/horrorsheep/grasp-name.svg?branch=master)](https://travis-ci.org/horrorsheep/grasp-name)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.0.
 
