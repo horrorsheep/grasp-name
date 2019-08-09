@@ -28,11 +28,11 @@ module.exports = function (config) {
     browsers: ['Chrome'],
     singleRun: false,
     restartOnFileChange: true,
-    browsers: ['Chrome_without_sandbox'],
+    browsers: ['ChromeHeadlessNoSandbox'],
     customLaunchers: {
-      Chrome_without_sandbox: {
+      ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: ['--no-sandbox'] // with sandbox it fails under Docker
+        flags: ['--no-sandbox']
       }
     },
   });
