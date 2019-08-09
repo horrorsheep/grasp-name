@@ -24,4 +24,5 @@ install:
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
   - ng add @ng-toolkit/serverless --provider aws
+  - npm install webpack-cli@latest
   - npm run build:serverless:deploy
