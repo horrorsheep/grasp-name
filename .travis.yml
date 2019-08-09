@@ -1,22 +1,23 @@
-sudo: required
-service:
-  - docker
+dist: trusty
+sudo: false
 
-before_install:
-  - docker build -t grasp-name-dev -f Dockerfile.dev .
+language: node_js
+node_js:
+  - '8'
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+cache:
+  directories:
+    - ./node_modules
+
+install:
+  - npm install
 
 script:
-  - docker run grasp-name-dev npm run test -- --watch=false
-
-deploy:
-  provider: elasticbeanstalk
-  region: "us-west-1"
-  app: "grasp-name"
-  env: "GraspName-env"
-  bucket_name: "elasticbeanstalk-us-west-1-779818728252"
-  bucket_path: "grasp-name"
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
