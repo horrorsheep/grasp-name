@@ -18,6 +18,10 @@ cache:
 
 install:
   - npm install
+  - npm install -g @angular/cli
+  - ng add @ng-toolkit/universal
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
+  - ng add @ng-toolkit/serverless --provider aws
+  - npm run build:serverless:deploy
