@@ -1,0 +1,13 @@
+{
+  "serverless": {
+    "provider": "aws",
+    "project": "grasp-name",
+    "skipInstall": false,
+    "directory": ".",
+    "clientProject": "grasp-name",
+    "serverless": {
+      "aws": {},
+      "gcloud": {}
+    }
+  }
+}
