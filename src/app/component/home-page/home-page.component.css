@@ -1,0 +1,10 @@
+.name-card {
+    max-width: 400px;
+    text-align: center;
+}
+
+.main-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NameInfoService } from 'src/app/service/name-info.service';
+import { Genderizing } from 'src/app/service/genderize';
 
 @Component({
   selector: 'app-home-page',
@@ -7,11 +8,12 @@ import { NameInfoService } from 'src/app/service/name-info.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  nameinfo: Genderizing = null;
 
   constructor(private infoservice: NameInfoService) { }
 
   ngOnInit() {
-    this.infoservice.getNameInfo('david').subscribe(info => console.log(info));
+    this.infoservice.getNameInfo('david').subscribe(info => this.nameinfo = info);
   }
 
 }
