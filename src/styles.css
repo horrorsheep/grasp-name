@@ -3,4 +3,9 @@
 @import url( 'https://fonts.googleapis.com/css?family=Roboto:400,700|Material+Icons');
 body {
     background-image: url("https://cdn.pixabay.com/photo/2019/07/24/11/59/canary-4360002_1280.jpg");
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
 }
