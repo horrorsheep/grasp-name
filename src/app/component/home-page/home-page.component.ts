@@ -9,7 +9,7 @@ import { Genderizing } from 'src/app/service/genderize';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private infoservice: NameInfoService) { }
+  constructor(public infoservice: NameInfoService) { }
 
   ngOnInit() {
   }

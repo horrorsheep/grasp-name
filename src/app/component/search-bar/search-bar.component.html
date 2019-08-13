@@ -1,4 +1,4 @@
-<mat-form-field class="names-chip-list" [color]="accent">
+<mat-form-field class="names-chip-list">
     <mat-chip-list #chipList aria-label="Name selection">
         <mat-chip *ngFor="let name of this.infoservice.names" (removed)="remove(name)">
         {{name}}

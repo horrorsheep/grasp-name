@@ -12,7 +12,7 @@ export class SearchBarComponent implements OnInit {
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   @Output() onSelectedOption = new EventEmitter();
 
-  constructor(private infoservice: NameInfoService) { }
+  constructor(public infoservice: NameInfoService) { }
 
   ngOnInit() {
   }
