@@ -8,12 +8,13 @@ import { Genderizing } from 'src/app/service/genderize';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-  nameinfo: Genderizing = null;
 
   constructor(private infoservice: NameInfoService) { }
 
   ngOnInit() {
-    this.infoservice.getNameInfo('david').subscribe(info => this.nameinfo = info);
   }
 
+  onSelectedName(e) {
+    this.infoservice.UpdateNameInfo();
+  }
 }

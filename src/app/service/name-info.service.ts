@@ -7,9 +7,19 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NameInfoService {
-  nameinfoUrl = "https://api.genderize.io/?name=";  
+  nameinfoUrl = "https://api.genderize.io/?name=";
+  names: string[] = [];
+  nameinfos: Genderizing[] = [];
+  
   constructor(private http: HttpClient) {  }
-  getNameInfo(name:string):Observable<Genderizing> {
+  getOneName(name:string):Observable<Genderizing> {
     return this.http.get<Genderizing>(this.nameinfoUrl.concat(name));
+  }
+
+  UpdateNameInfo() {
+    this.nameinfos = [];
+    for (let name of this.names) {
+      this.getOneName(name).subscribe(info => this.nameinfos.push(info));
+    }
   }
 }

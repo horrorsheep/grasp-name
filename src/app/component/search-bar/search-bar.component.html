@@ -1,1 +1,13 @@
-<p>search-bar works!</p>
+<mat-form-field class="names-chip-list" [color]="accent">
+    <mat-chip-list #chipList aria-label="Name selection">
+        <mat-chip *ngFor="let name of this.infoservice.names" (removed)="remove(name)">
+        {{name}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Enter a first name, or more"
+                style="color: white"
+                [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
+    </mat-chip-list>
+</mat-form-field>

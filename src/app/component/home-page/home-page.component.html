@@ -1,13 +1,14 @@
 <div class="main-div">
-<mat-card *ngIf="nameinfo" class="name-card">
-    <mat-card-title>{{nameinfo.name}}</mat-card-title>
-    <mat-card-content>
-        <p>{{nameinfo.gender}}</p>
-        <p>Probability: {{nameinfo.probability}}</p>
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
-    </mat-card-actions>
-</mat-card>
+    <app-search-bar (onSelectedOption)="onSelectedName($event)"></app-search-bar>
+    <mat-card *ngFor="let nameinfo of this.infoservice.nameinfos" class="name-card">
+        <mat-card-title>{{nameinfo.name}}</mat-card-title>
+        <mat-card-content>
+            <p>{{nameinfo.gender}}</p>
+            <p>Probability: {{nameinfo.probability}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+        </mat-card-actions>
+    </mat-card>
 </div>
